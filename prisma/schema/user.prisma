@@ -1,0 +1,24 @@
+model User {
+    id  String  @id @db.Char(36)  @default(uuid())
+    fullname   String
+    avatar  String?
+    whatsapp    String  @unique
+    email   String  @unique
+    password    String
+    role    String?
+    bio String?
+    location    String?
+
+    two_step_login  Boolean?
+
+    instagram   String?
+    tiktok  String?
+
+    otp String?
+    otp_expires DateTime?
+
+    created_at  DateTime    @default(now())
+    updated_at  DateTime    @updatedAt
+
+    @@map("user")
+}
